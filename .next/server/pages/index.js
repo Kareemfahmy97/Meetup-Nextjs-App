@@ -261,7 +261,8 @@ async function getStaticProps() {
         image: meetup.image,
         id: meetup._id.toString()
       }))
-    }
+    },
+    revalidate: 2
   };
 }
 /* harmony default export */ var pages = __webpack_exports__["default"] = (HomePage);
