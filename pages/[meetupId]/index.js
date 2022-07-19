@@ -24,7 +24,7 @@ export async function getStaticPaths() {
     "mongodb+srv://kareemfahmyy:0125156522KkKk@cluster0.3itc3tp.mongodb.net/Meetups?retryWrites=true&w=majority"
   );
   const db = client.db();
-
+    
   const meetupsCollection = db.collection("Meetups");
 
   const meetups = await meetupsCollection.find({}, {_id: 1}).toArray();
@@ -32,7 +32,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: 'blocking',
+    fallback: 'git blocking',
     paths: meetups.map(meetup=>({
       params: {
         meetupId: meetup._id.toString(),
